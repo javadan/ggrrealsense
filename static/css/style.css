@@ -1,0 +1,435 @@
+
+.animation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 400px;
+  height: 600px;
+  margin: 10% 35%;
+  border: 2px solid #999;
+}
+
+.backgroundLight{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 390px;
+  height: 590px;
+  background: #101010;
+}
+
+.squarevideo{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  width: 642px;
+  height: 482px;
+  border: 2px solid #666;
+  justify-content: center;
+ }
+
+.square{
+  width: 100px;
+  height: 100px;
+  border: 2px solid #666;
+  position: absolute; z-index: 1;
+  background: url("/static/Egg.gif") no-repeat center center;
+  background-size: 99px 99px;
+}
+
+.centerCircle{
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background-color: #111;
+}
+
+/*** Cross ***/
+
+.cross1{
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.cross2{
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+/*** Gradient circle ***/
+
+.circleGradient{
+  background: radial-gradient(#444, #222, #111, transparent);
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 60px;
+}
+
+/*** Satellites circles ***/
+
+.satelliteCircle1{
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  border-radius: 120px;
+  border: 2px solid #333;
+  animation: satellite1 5s infinite linear;
+}
+  .satelliteCircle1:before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: 10px;
+    top: -18px;
+  }
+
+.satelliteCircle2{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #333;
+  animation: satellite2 12s infinite linear;
+}
+  .satelliteCircle2:before{
+    content: "";
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    margin: 12px 0 0 5px;
+  }
+  .satelliteCircle2:after{
+    content: "";
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    margin: 12px 0 0 5px;
+    transform: rotate(95deg);
+  }
+
+.satelliteRectangles{
+/*   width: 35px;
+  height: 25px;
+  position: absolute;
+  border-top: 8px solid #333;
+  border-bottom: 8px solid #333; */
+  position: absolute;
+	border-right: 20px solid #555;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	height: 25px;
+	width: 0;
+  border-radius: 0 80% 80% 0;
+  animation: satelliteRects 6s infinite linear;
+}
+  .satelliteRectangles:before{
+/*     content: "";
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    border-top:8px solid #333;
+    border-bottom: 8px solid #333;
+    top: 8px; */
+  }
+
+  .satelliteRectangles:after{
+    content: "";
+    width: 15px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    background: #111;
+    top: -10px;
+    left: -7px;
+    transform: rotate(4deg);
+  }
+
+.circle1{
+  width: 145px;
+  height: 145px;
+  position: absolute;
+  border-radius: 120px;
+  border: 2px solid #222;
+  animation: turnOverAndOverRight 2s infinite linear;
+}
+
+.circle2 {
+  position: absolute;
+  border: 4px solid #fff;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-radius: 150px;
+  width: 143px;
+  height: 143px;
+  animation: turnOverAndOverRight 2s infinite linear;
+}
+
+.bigCircle{
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  border-radius: 50%;
+  border: 20px solid #222;
+}
+
+/*** dashed circles ***/
+
+.dashCircle1{
+  position: absolute;
+  width: 188px;
+  height: 188px;
+  border-radius: 50%;
+  border: 2px dashed #333;
+  animation: turnOverAndOverRight 8s infinite linear;
+}
+
+.dashCircle2{
+  position: absolute;
+  width: 198px;
+  height: 198px;
+  border-radius: 50%;
+  border: 2px dashed #333;
+  animation: turnOverAndOverLeft 8s infinite linear;
+}
+
+.dashCircle3{
+  position: absolute;
+  width: 208px;
+  height: 208px;
+  border-radius: 50%;
+  border: 2px dashed #333;
+  animation: turnOverAndOverRight 10s infinite linear;
+}
+
+.thinCircle{
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  border-radius: 190px;
+  border: 2px solid #666;
+}
+
+@keyframes turnOverAndOverRight {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes turnOverAndOverLeft {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes satellite1 {
+    from {-webkit-transform: rotateZ(0deg) translateX(160px) rotate(0deg)}
+    to {-webkit-transform: rotateZ(-360deg) translateX(160px) rotate(-360deg)}
+}
+
+@keyframes satellite2 {
+    from {-webkit-transform: rotateZ(0deg) translateX(160px)}
+    to {-webkit-transform: rotateZ(360deg) translateX(160px)}
+}
+
+
+@keyframes satelliteRects {
+    from {-webkit-transform: rotateZ(0deg) translateX(120px)}
+    to {-webkit-transform: rotateZ(360deg) translateX(120px)}
+}
+
+
+
+
+/*body{
+  /*  float:left;
+    width:100%;
+    height:100%;
+    background: url("{{ url_for('video_feed') }}") no-repeat center center fixed;
+    background-size: cover;
+    
+    overscroll-behavior:contain;
+    overflow: hidden;
+    margin:0;
+    padding:0;
+}
+
+*/
+
+.right_side{
+    float:left;
+    width:20%;
+    height:50%;
+    background-color:pink ;
+    opacity:0.5;
+    margin:0;
+    padding:0; 
+}
+
+.left_side{
+    float:left;
+    width:20%;
+    height:50%;
+    background-color:pink ;
+    opacity:0.5;
+    margin:0;
+    padding:0; 
+}
+
+
+.joystick_zone{
+    position:absolute;
+    bottom: 10px;
+    float:left;
+    width:20%;
+    height:50%;
+    background-color:transparent ;
+
+    margin:0;
+    padding:0; 
+}
+
+
+.middle_zone{   
+    float:left;
+    width:60%;
+    height:20%;
+    background: white;
+  
+    padding:0;
+    margin:0;
+ 
+    margin-left:0px;
+    margin-right:0px;
+   /* -webkit-box-sizing: border-box;box not larger when borders applied */
+
+} 
+
+.joystick_base{
+    display:none;
+    width:100px;
+    height:100px;
+    background-color:#680;
+    z-index:100;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius:50%;
+}
+
+.joystick_nip{
+    display:none;
+    width:50px;
+    height:50px;
+    background-color:#680;
+    z-index:100;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius:50%;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color:transparent;
+    user-select: none;
+}
+
+
+.button{
+        background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+        background-image: linear-gradient(top, #f4f1ee, #fff);
+        border-radius: 50%;
+        box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+        float:left;
+        height: 70px;
+        margin-left:5%;
+        margin-right:5%;
+        margin-top:5%;
+        position: relative;
+        width: 70px;			
+        -webkit-transition: all .01s linear;
+        transition: all .01s linear;
+        vertical-align:middle;
+}
+
+.button:after{
+        color:#e9e6e4;
+        content: "";
+        display: block;
+        font-size: 30px;
+        height: 30px;
+        text-decoration: none;
+        text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+        position: absolute;
+        width: 30px;
+}
+
+
+.buttonB:after{
+        content: "";
+        left: 24px;
+        top: 20px;
+}
+
+.flower:after{
+        content: "✿";
+        left: 23px;
+        top: 14px;
+}
+
+.buttonA:after{
+        content: "";
+        left:24px;
+        top:20px;
+}
+
+.cross:after{
+        content: "✖";
+        left: 24px;
+        top: 15px;
+}
+
+
+
+
+.button:active{
+        background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+        background-image: linear-gradient(top, #efedec, #f7f4f4);
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
+}
+
+.button:active:after{
+        color:#dbd2d2;
+        text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
+
+
+

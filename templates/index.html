@@ -1,0 +1,49 @@
+<html>
+  <head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>	  
+      <!--script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" /-->
+      <script src="{{ url_for('static', filename='js/socket.io.js') }}"></script>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}" />
+  </head>
+
+  <body>
+	 
+	  
+
+<div id="animation" class="animation">
+  <div class="backgroundLight">
+    <div class="square"></div>
+    <div class="satelliteCircle1"></div>
+    <div class="satelliteCircle2"></div>
+    <div class="satelliteRectangles">
+    </div>
+    <div class="circleGradient"></div>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="bigCircle"></div>
+    <div class="dashCircle1"></div>
+    <div class="dashCircle2"></div>
+    <div class="dashCircle3"></div>
+    <div class="thinCircle"></div>
+  </div>
+</div>
+
+    <div class="squarevideo">
+		<img src="{{url_for('video_feed') }}" >
+    </div>
+
+	<script>
+
+            var intervalId = window.setInterval(function(){
+                $.getJSON('/distances', function(data){
+                    if (data.length != 0) {
+			$("#animation").hide().css("visibility", "hidden");
+                        clearInterval(intervalId);  // stop checking it
+		    }
+                })
+            }, 1000);  
+
+        </script>
+
+  </body>
+</html>
